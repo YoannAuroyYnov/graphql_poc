@@ -1,0 +1,27 @@
+{
+  "name": "graphQl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^5.2.0",
+    "@as-integrations/express5": "^1.1.2",
+    "@prisma/adapter-better-sqlite3": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "better-sqlite3": "^12.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "graphql": "^16.12.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.2.0"
+  }
+}
