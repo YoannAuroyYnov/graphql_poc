@@ -2,12 +2,11 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 model User {
@@ -24,6 +23,7 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  @@map("users")
 }
 
 model Post {
@@ -40,6 +40,7 @@ model Post {
   updatedAt DateTime @updatedAt
 
   @@index([authorId])
+  @@map("posts")
 }
 
 model Image {
@@ -49,6 +50,7 @@ model Image {
   authorId  Int
 
   createdAt DateTime @default(now())
+  @@map("images")
 }
 
 model UserFollow {
@@ -63,6 +65,7 @@ model UserFollow {
   @@id([followerId, followedId])
   @@index([followerId])
   @@index([followedId])
+  @@map("user_follows")
 }
 
 model Like {
@@ -76,6 +79,7 @@ model Like {
   updatedAt DateTime @updatedAt
 
   @@unique([postId, authorId])
+  @@map("likes")
 }
 
 model Comment {
@@ -90,4 +94,5 @@ model Comment {
   updatedAt DateTime @updatedAt
 
   @@index([postId])
+  @@map("comments")
 }
